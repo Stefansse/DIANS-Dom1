@@ -2,7 +2,6 @@ package com.example.winarriesapp.service.impl;
 
 import com.example.winarriesapp.model.Winery;
 import com.example.winarriesapp.model.dto.WineryDto;
-import com.example.winarriesapp.model.exceptions.LocationNotFoundException;
 import com.example.winarriesapp.model.exceptions.WineryNotFoundException;
 import com.example.winarriesapp.repository.WineryRepository;
 import com.example.winarriesapp.service.WineryService;
