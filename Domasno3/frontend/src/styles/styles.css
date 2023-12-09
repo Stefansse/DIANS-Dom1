@@ -1,0 +1,18 @@
+.column-spacing {
+    padding: 8px; /* Adjust the padding as needed */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination .page-item {
+    margin: 0; /* Adjust margin if needed */
+}
+
+.pagination .page-link {
+    border: none !important;
+    border-radius: 0; /* Optional: Adjust border-radius if needed */
+}
