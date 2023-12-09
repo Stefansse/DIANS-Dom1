@@ -16,3 +16,38 @@
     border: none !important;
     border-radius: 0; /* Optional: Adjust border-radius if needed */
 }
+
+.contact-label {
+    font-weight: bold; /* Make labels bold in the Contact component */
+}
+
+.square-label {
+    display: inline-block;
+    padding: 5px; /* Adjust padding as needed */
+    border-radius: 5px; /* Adjust border-radius to create a square */
+    background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
+    border: 1px solid #ccc; /* Add a border for a box-like appearance */
+}
+
+.white-link {
+    color: white !important;
+}
+
+.custom-page-item {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.custom-page-link {
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none; /* Remove underline */
+}
+
+.custom-page-link:hover {
+    background-color: darkred;
+}

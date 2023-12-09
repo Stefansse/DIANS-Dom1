@@ -12,6 +12,7 @@ import {
     Route,
     NavLink,
 } from "react-router-dom";
+import Contact from "../Contact/contact";
 
 class App extends Component {
     constructor(props) {
@@ -45,6 +46,11 @@ class App extends Component {
                             exact
                             path="/wineries/edit/:id"
                             element={<WineryEdit onEditWinery={this.editWinery} winery={this.state.selectedWinery}/>}
+                        />
+                        <Route
+                            exact
+                            path="/contact"
+                            element={<Contact />}
                         />
 
                     </Routes>

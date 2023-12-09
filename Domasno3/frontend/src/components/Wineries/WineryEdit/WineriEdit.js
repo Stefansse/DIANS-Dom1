@@ -111,7 +111,7 @@ const WineryEdit = (props) => {
                         />
                     </div>
 
-                    <button id="submit" type="submit" className="btn btn-primary">Submit</button>
+                    <button id="submit" type="submit" className="btn btn-danger">Submit</button>
                 </form>
             </div>
         </div>

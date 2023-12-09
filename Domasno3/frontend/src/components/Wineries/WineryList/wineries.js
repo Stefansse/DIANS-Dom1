@@ -4,7 +4,7 @@ import WineryTerm from '../WineryTerm/wineryterm';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-
+import leftImageUrl from '../../Images/left_image_url.jpg'
 class Wineries extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +25,10 @@ class Wineries extends Component {
             <div className="container mt-5">
                 <div className="row">
                     <div className="row">
-                        <table className="table table-bordered table-hover bg-dark text-white">
+                        <div className="col-md-3">
+                            <img src={leftImageUrl} alt="Left Image" className="img-fluid" />
+                        </div>
+                        <table className="table table-bordered table-hover bg-danger text-white">
                             <thead>
                             <tr>
                                 <th scope="col">Location</th>
@@ -52,22 +55,22 @@ class Wineries extends Component {
                 </div>
 
                 <ReactPaginate
-                    previousLabel={<span className={`page-link ${this.state.page === 0 ? 'disabled' : ''}`}>Previous</span>}
-                    nextLabel={<span className={`page-link ${this.state.page === pageCount - 1 ? 'disabled' : ''}`}>Next</span>}
+                    previousLabel={<span className="custom-page-link">Previous</span>}
+                    nextLabel={<span className="custom-page-link">Next</span>}
                     breakLabel={<span className="page-link">...</span>}
                     breakClassName={'break-me'}
-                    pageClassName={'page-item'}
-                    pageLinkClassName={'page-link'}
+                    pageClassName={'custom-page-item'}
+                    pageLinkClassName={'custom-page-link'}
                     pageCount={pageCount}
                     marginPagesDisplayed={2}
                     pageRangeDisplayed={5}
                     onPageChange={this.handlePageClick}
                     containerClassName={'pagination justify-content-center'}
                     activeClassName={'active'}
-                    previousClassName={`page-item ${this.state.page === 0 ? 'disabled' : ''}`}
-                    nextClassName={`page-item ${this.state.page === pageCount - 1 ? 'disabled' : ''}`}
-                    previousLinkClassName={'page-link'}
-                    nextLinkClassName={'page-link'}
+                    previousClassName={`custom-page-item ${this.state.page === 0 ? 'disabled' : ''}`}
+                    nextClassName={`custom-page-item ${this.state.page === pageCount - 1 ? 'disabled' : ''}`}
+                    previousLinkClassName={'custom-page-link'}
+                    nextLinkClassName={'custom-page-link'}
                     disableInitialCallback={true}
                 />
 
