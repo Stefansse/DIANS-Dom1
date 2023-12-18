@@ -1,12 +1,12 @@
 package com.example.winarriesapp.web.controller;
 
+import com.example.winarriesapp.filters.WineryFilter;
 import com.example.winarriesapp.model.Winery;
 import com.example.winarriesapp.model.dto.WineryDto;
 import com.example.winarriesapp.service.WineryService;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -20,8 +20,8 @@ public class WineryRestController {
     }
 
     @GetMapping
-    private List<Winery> findAll() {
-        return this.wineryService.listWineries();
+    private Page<Winery> findAll(@RequestParam(defaultValue = "10") Integer pageSize, @RequestParam(defaultValue = "0") Integer pageNumber, @RequestBody WineryFilter wineryFilter) {
+        return this.wineryService.listWineries(pageSize,pageNumber,wineryFilter);
     }
 
     @GetMapping("/{id}")
