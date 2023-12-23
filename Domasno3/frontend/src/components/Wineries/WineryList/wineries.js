@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import leftImageUrl from '../../Images/left_image_url.jpg'
+import WineryFilterForm from "../../WineryFilter/WineryFilter";
 class Wineries extends Component {
     constructor(props) {
         super(props);
@@ -12,10 +13,15 @@ class Wineries extends Component {
         this.state = {
             page: 0,
             size: 9,
+            filter: {
+                name: '',
+                location: '',
+            },
         };
     }
 
     render() {
+        const { name, location } = this.state.filter;
         const offset = this.state.size * this.state.page;
         const nextPageOffset = offset + this.state.size;
         const pageCount = Math.ceil(this.props.wineries.length / this.state.size);
@@ -23,6 +29,7 @@ class Wineries extends Component {
 
         return (
             <div className="container mt-5">
+                <WineryFilterForm onFilter={this.handleFilter} />
                 <div className="row">
                     <div className="row">
                         <div className="col-md-3">
@@ -87,8 +94,23 @@ class Wineries extends Component {
         });
     };
 
+    handleFilter = (filter) => {
+        // Update the state with the new filter criteria
+        this.setState({
+            filter,
+            page: 0, // Reset the page when applying a new filter
+        });
+    };
+
     getWineriesPage = (offset, nextPageOffset) => {
         return this.props.wineries
+            .filter((winery) => {
+                const { name, location } = this.state.filter;
+                return (
+                    (name === '' || winery.name.toLowerCase().includes(name.toLowerCase())) &&
+                    (location === '' || winery.locationName.toLowerCase().includes(location.toLowerCase()))
+                );
+            })
             .map((term, index) => (
                 <WineryTerm key={index} term={term} onDelete={this.props.onDelete} onEdit={this.props.onEdit} />
             ))

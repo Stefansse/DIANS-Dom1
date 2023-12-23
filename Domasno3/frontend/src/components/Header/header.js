@@ -21,9 +21,6 @@ const header = () => {
                         <li className="nav-item active">
                             <Link className="nav-link white-link" to={"/contact"}>Contact</Link>
                         </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link white-link" to={"/map"}>Map</Link>
-                        </li>
                     </ul>
                 </div>
             </nav>

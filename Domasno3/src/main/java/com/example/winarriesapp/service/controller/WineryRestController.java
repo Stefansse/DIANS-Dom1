@@ -1,4 +1,4 @@
-package com.example.winarriesapp.web.controller;
+package com.example.winarriesapp.service.controller;
 
 import com.example.winarriesapp.filters.WineryFilter;
 import com.example.winarriesapp.model.Winery;
@@ -20,7 +20,7 @@ public class WineryRestController {
     }
 
     @GetMapping
-    private Page<Winery> findAll(@RequestParam(defaultValue = "10") Integer pageSize, @RequestParam(defaultValue = "0") Integer pageNumber, @RequestBody WineryFilter wineryFilter) {
+    private Page<Winery> findAll(@RequestParam(defaultValue = "10") Integer pageSize, @RequestParam(defaultValue = "0") Integer pageNumber,@RequestBody WineryFilter wineryFilter) {
         return this.wineryService.listWineries(pageSize,pageNumber,wineryFilter);
     }
 
