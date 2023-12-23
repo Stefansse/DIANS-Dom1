@@ -22,11 +22,10 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // You can handle form submission logic here
-        // For demonstration purposes, just set showResponse to true
+
         setShowResponse(true);
 
-        // Clear form fields
+
         setFormData({
             name: '',
             surname: '',

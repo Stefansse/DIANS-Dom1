@@ -1,0 +1,6 @@
+.map-container {
+    height: 100vh; /* Use 100% of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -3,7 +3,7 @@ import axios from '../custom-axios/axios';
 const WineryService = {
 
     fetchWineries: () => {
-        return axios.get("/wineries", {
+        return axios.get("/wineries/filter", {
             params: {
                 size:5,
                 page:2

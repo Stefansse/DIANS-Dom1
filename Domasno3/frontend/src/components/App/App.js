@@ -13,6 +13,7 @@ import {
     NavLink,
 } from "react-router-dom";
 import Contact from "../Contact/contact";
+import WineryMap from "../WinaryMap/WinaryMap";
 
 class App extends Component {
     constructor(props) {
@@ -51,6 +52,12 @@ class App extends Component {
                             exact
                             path="/contact"
                             element={<Contact />}
+                        />
+
+                        <Route
+                            exact
+                            path="/map"
+                            element={<WineryMap wineries={this.state.wineries} />}
                         />
 
                     </Routes>

@@ -1,5 +1,5 @@
 .column-spacing {
-    padding: 8px; /* Adjust the padding as needed */
+    padding: 8px;
 }
 
 .pagination {
@@ -9,24 +9,24 @@
 }
 
 .pagination .page-item {
-    margin: 0; /* Adjust margin if needed */
+    margin: 0;
 }
 
 .pagination .page-link {
     border: none !important;
-    border-radius: 0; /* Optional: Adjust border-radius if needed */
+    border-radius: 0;
 }
 
 .contact-label {
-    font-weight: bold; /* Make labels bold in the Contact component */
+    font-weight: bold;
 }
 
 .square-label {
     display: inline-block;
-    padding: 5px; /* Adjust padding as needed */
-    border-radius: 5px; /* Adjust border-radius to create a square */
-    background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
-    border: 1px solid #ccc; /* Add a border for a box-like appearance */
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
 }
 
 .white-link {
@@ -45,7 +45,7 @@
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 4px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 .custom-page-link:hover {
