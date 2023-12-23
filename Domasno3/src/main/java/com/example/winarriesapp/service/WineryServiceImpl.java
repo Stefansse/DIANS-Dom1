@@ -1,4 +1,4 @@
-package com.example.winarriesapp.service.impl;
+package com.example.winarriesapp.service;
 
 import com.example.winarriesapp.model.Winery;
 import com.example.winarriesapp.model.dto.WineryDto;
@@ -6,6 +6,7 @@ import com.example.winarriesapp.model.exceptions.WineryNotFoundException;
 import com.example.winarriesapp.repository.WineryRepository;
 import com.example.winarriesapp.service.WineryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -62,4 +63,22 @@ public class WineryServiceImpl implements WineryService {
     public void deleteById(Long id) {
         this.wineryRepository.deleteById(id);
     }
+
+    @Override
+    public List<Winery> filterWineries(String locationName, String wineryName) {
+        Specification<Winery> spec = Specification.where(null);
+
+        if (locationName != null && !locationName.isEmpty()) {
+            spec = spec.and((root, query, cb) ->
+                    cb.like(cb.lower(root.get("locationName")), "%" + locationName.toLowerCase() + "%"));
+        }
+
+        if (wineryName != null && !wineryName.isEmpty()) {
+            spec = spec.and((root, query, cb) ->
+                    cb.like(cb.lower(root.get("name")), "%" + wineryName.toLowerCase() + "%"));
+        }
+
+        return wineryRepository.findAll(spec);
+    }
+
 }

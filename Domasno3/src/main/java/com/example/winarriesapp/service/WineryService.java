@@ -19,5 +19,6 @@ public interface WineryService {
 
     void deleteById(Long id);
 
-
+    // New method for filtering
+    List<Winery> filterWineries(String locationName, String wineryName);
 }

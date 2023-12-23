@@ -1,0 +1,10 @@
+version: "3"
+services:
+  product-db:
+    image: "postgres:latest"
+    environment:
+      - POSTGRES_USER=sfn
+      - POSTGRES_PASSWORD=sfn123
+      - POSTGRES_DB=winery
+    ports:
+      - "5432:5432"
